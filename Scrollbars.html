@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+    <head>
+
+    <title></title>
+	<style>
+	body{
+		background-color:goldenrod;
+	}
+	/* Scrollbar making:- */
+	.SB1{
+		width:10px;
+		resize:none;
+		height:120px;
+		border-radius:10px;
+		color:magenta;
+		padding:20px;
+		margin:30px;
+		background-color:rgba(128, 128, 128, 0.525);
+	}
+	.SB2{
+		width:10px;
+		resize:none;
+		height:120px;
+		border-radius:10px;
+		color:magenta;
+		padding:20px;
+		margin:30px;
+		background-color:rgba(0, 255, 255, 0.525);
+	}
+	.SB3{
+		width:10px;
+		resize:none;
+		height:120px;
+		border-radius:10px;
+		color:magenta;
+		padding:20px;
+		margin:30px;
+		background-color:rgba(0, 128, 0, 0.525);
+	}
+	.SB4{
+		width:10px;
+		resize:none;
+		height:120px;
+		border-radius:10px;
+		color:magenta;
+		padding:20px;
+		margin:30px;
+		background-color:rgba(18, 105, 212, 0.525);
+	}
+	.SB5{
+		width:10px;
+		resize:none;
+		height:120px;
+		border-radius:10px;
+		color:magenta;
+		padding:20px;
+		margin:30px;
+		background-color:rgba(82, 82, 128, 0.525);
+	}
+	/* First scrollbar example */
+	/* Width of the scrollbar is specified here */
+	.SB1::-webkit-scrollbar{
+		width:10px;
+	}
+	/* The track of the scrollbar */
+	.SB1::-webkit-scrollbar-track{
+		background-color:purple;
+	}
+	/* The buttons that make the scroll wheel go up or down
+	.SB1::-webkit-scrollbar-button{
+		color:black;
+		background-color:pink;
+	} */
+	/* The thumb or the main scroll wheel */
+	.SB1::-webkit-scrollbar-thumb{
+		background-color:red;
+	}
+	/* The second scrollbar with rounded corners thumb */
+	.SB2::-webkit-scrollbar{
+		width:10px;
+	}
+	.SB2::-webkit-scrollbar-track{
+		background-color:navy;
+	}
+	.SB2::-webkit-scrollbar-thumb{
+		background-color:black;
+		border-radius:5px;
+	}
+	/* The third scrollbar with rounded corners and rounded thumb*/
+	.SB3::-webkit-scrollbar{
+		width:10px;
+	}
+	.SB3::-webkit-scrollbar-track{
+		background-color:rgb(72, 148, 17);
+		border-radius:10px;
+	}
+	.SB3::-webkit-scrollbar-thumb{
+		background-color:rgb(240, 17, 151);
+		border-radius:10px;
+	}
+
+	/* The fourth scrollbar with rounded corners and hover effect */
+	.SB4::-webkit-scrollbar{
+		width:10px;
+	}
+	.SB4::-webkit-scrollbar-track{
+		background-color:rgb(210, 255, 177);
+		border-radius:10px;
+	}
+	.SB4::-webkit-scrollbar-thumb{
+		background-color:rgb(22, 255, 80);
+	}
+	.SB4::-webkit-scrollbar-thumb:hover{
+		background-color:rgb(27, 117, 49);
+		cursor: pointer;
+	}
+
+	/* The fifth scrollbar */
+	.SB5::-webkit-scrollbar{
+		width:10px;
+	}
+	.SB5::-webkit-scrollbar-track{
+		background-color:rgb(101, 85, 178);
+		border-radius:10px;
+		box-shadow: 0 0 5px black inset;
+	}
+	.SB5::-webkit-scrollbar-thumb{
+		background-color:rgb(22, 185, 255);
+		border:2px solid white;
+		border-radius:10px;
+	}
+	.SB5::-webkit-scrollbar-thumb:hover{
+		background-color:rgb(45, 104, 129);
+		cursor: pointer;
+	}
+	</style>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+	<h1>Scrollbar Selectors</h1>
+	<h3>For webkit browsers, you can use the following pseudo elements to customize the browser's scrollbar:</h3>
+	<h4>
+	<ol>
+	<li><code>::-webkit-scrollbar</code> the scrollbar.</li>
+	
+	<li><code>::-webkit-scrollbar-button</code> the buttons on the scrollbar (arrows pointing upwards and downwards).</li>
+	
+	<li><code>::-webkit-scrollbar-thumb</code> the draggable scrolling handle.</li>
+	
+	<li><code>::-webkit-scrollbar-track</code> the track (progress bar) of the scrollbar.</li>
+	
+	<li><code>::-webkit-scrollbar-track-piece</code> the track (progress bar) NOT covered by the handle.</li>
+	
+	<li><code>::-webkit-scrollbar-corner</code> the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.</li>
+	
+	<li><code>::-webkit-resizer</code> the draggable resizing handle that appears at the bottom corner of some elements.</li>
+	</ol>
+	</h4>
+	<div class="container">
+		<textarea class="SB1" cols="10" rows="10" id="1"></textarea>
+		<textarea class="SB2" cols="10" rows="10" id="2"></textarea>
+		<textarea class="SB3" cols="10" rows="10" id="3"></textarea>
+		<textarea class="SB4" cols="10" rows="10" id="4"></textarea>
+		<textarea class="SB5" cols="10" rows="10" id="5"></textarea>
+	</div>
+	<script>
+		let TA1=document.getElementById("1");
+		let TA2=document.getElementById("2");
+		let TA3=document.getElementById("3");
+		let TA4=document.getElementById("4");
+		let TA5=document.getElementById("5");
+		TA1.innerHTML = "This is a simple scrollbar example";
+		TA2.innerHTML = "This is a thumb rounded corner scrollbar example";
+		TA3.innerHTML = "This is a rounded corner scrollbar example";
+		TA4.innerHTML = "This is a scrollbar example with hover effect";
+		TA5.innerHTML = "This is a thumb rounded corner scrollbar example";
+	</script>
+    </body>
+
+
+</html>

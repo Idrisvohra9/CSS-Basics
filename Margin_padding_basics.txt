@@ -1,0 +1,46 @@
+* Margin is a css property that is used to control the spacing between elements.
+
+* for example:
+div{
+    margin:10px;
+}
+imp: Here it means that the div element will have the same space at all places that is top, bottom, left, right.
+* and Other elements will be seen accordingly.
+
+* Padding is a css property that is used to control the spacing between the elements inside an element.
+
+div{
+    padding:10px;
+}
+// this will make space around the elements in the div element the space will be same at all places that is top, bottom, left, right.
+
+# Margin vs Padding:
+
+-> Margin makes space by pushing the adjacent elements away from it.
+-> Padding makes space by growing the inner size of the element or reducing the size of the content inside it. 
+by default it will increase the size.
+(By setting box-sizing:border-box on the element the size of the content will shrink to accommodate the space.)
+
+? When to use Padding?
+* When we want to increase the size of an element,
+* When we want to not touch the content to the border of the container,
+* When we want to see more of the background of the container through the space of padding.
+
+
+? When to use Margin?
+* When we want that the element should not touch the adjacent element we use margin.
+* if we give margin:auto; it will center the element on the screen horizontally(Vertically too if we use flexbox or grid)
+
+// Margin and padding can be adjusted for a specific side of an element by using their own properties such as:
+margin-top || padding-top
+margin-right || padding-right
+margin-bottom || padding-bottom
+margin-left || padding-left
+
+// And each of them have a shorthand use for writing css in one line that works like:
+padding: top right bottom left; in px!!!(It goes clock wise)
+margin: top right bottom left; in px!!!(It goes clock wise)
+
+// Closing note: Margin is used to make space between adjacent elements, Padding is used to make space between elements in a element or inside of an element.
+
+imp                "Margins are'nt a part of an element padding is"

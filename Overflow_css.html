@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+    <head>
+
+    <title>Overflow CSS property</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body{
+            background-color:rgb(29, 97, 97);
+            color:white;
+        }
+        code{
+            color:red;
+        }
+        div{
+            display: inline-block;
+            width:200px;
+            height:75px;
+            margin: 12px;
+            border:1px solid black;
+        }
+        .container{
+            display: inline;
+        }
+        .visible{
+            background-color:magenta;
+            overflow:visible;
+        }
+        .hidden{
+            background-color:maroon;
+            overflow: hidden;
+            margin-bottom: 146px;
+        }
+        .scroll{
+            background-color:pink;
+            overflow:scroll;
+            margin-bottom: 146px;
+        }
+        .auto{
+            background-color:lightblue;
+            overflow:auto;
+            margin-bottom: 146px;
+        }
+        .overflow-x-y{
+            background-color:orange;
+            overflow-x: hidden;
+            overflow-y:scroll;
+            margin-bottom: 146px;
+        }
+        em{
+            color:darkred;
+            font-weight: bold;
+        }
+    </style>
+    </head>
+    <body>
+        <h2>The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.
+    
+            The overflow property has the following values:</h2>
+        <ul>
+            <li><code>visible </code>- Default. The overflow is not clipped. The content renders outside the element's box</li>
+            <li><code>hidden </code>- The overflow is clipped, and the rest of the content will be invisible</li>
+            <li><code>scroll </code>- The overflow is clipped, and a scrollbar is added to see the rest of the content</li>
+            <li><code>auto </code>- Similar to scroll, but it adds scrollbars only when necessary</li>
+            <li>
+                <h3>There are specific properties also available for the overflow on x axis and y axis:</h3>
+                <ul>
+                    <li><code>overflow-x </code>specifies what to do with the left/right edges of the content.</li>
+                    <li><code>overflow-y </code>specifies what to do with the top/bottom edges of the content.</li>
+                </ul>
+            </li>
+        </ul>
+        <em></em>
+        <div class="container">
+
+            <div class="visible">The overflow of the content in this div is <em>visible</em>. You can use the overflow property when you want to have better control of the layout. The overflow property specifies what happens if content overflows an element's box.</div>
+            <div class="hidden">The overflow of the content in this div is <em>hidden</em>. You can use the overflow property when you want to have better control of the layout. The overflow property specifies what happens if content overflows an element's box.</div>
+            <div class="scroll">The overflow of the content in this div is <em>scrollable</em>. You can use the overflow property when you want to have better control of the layout. The overflow property specifies what happens if content overflows an element's box.</div>
+            <div class="auto">The overflow of the content in this div is <em>automatically adjusted</em>. You can use the overflow property when you want to have better control of the layout. The overflow property specifies what happens if content overflows an element's box.</div>
+            <div class="overflow-x-y">The overflow of the content in this div is <em>custom as per the x and y axis</em>. You can use the overflow property when you want to have better control of the layout. The overflow property specifies what happens if content overflows an element's box.</div>
+        </div>
+    </body>
+
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+    <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shadows</title>
+	<style>
+	body{
+	background-color:rgb(20,69,69);
+	}
+	/* width */
+	body::-webkit-scrollbar {
+	  width: 10px;
+	  background-color:grey;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+	  box-shadow: inset 0 0 5px white; 
+	  border-radius: 10px; 
+	}
+	 
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+	  background: red;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+	  background: orange; 
+	}
+	h1{
+	color:darkpink;
+	}
+	h2{
+	color:darkgrey;
+	}
+	li{
+	color:yellow;
+	}
+	h3{
+	color:white;
+	background-color:darkcyan;
+	}
+	.textS1{
+	text-shadow:2px 2px;
+	background-color:rgb(20,69,69);
+	}
+	
+	.textS2{
+	text-shadow:2px 2px red;
+	background-color:rgb(20,69,69);
+	}
+	
+	.textS3{
+	text-shadow:2px 2px 5px red;
+	background-color:rgb(20,69,69);
+	}
+	
+	.textS4{
+	color:red;
+	text-shadow:2px 2px 4px black;
+	background-color:rgb(20,69,69);
+	}
+	
+	.textS5{
+	color:black;
+	text-shadow:0px 0px 5px blue;
+	background-color:rgb(20,69,69);
+	}
+	
+	.textS6{
+	color:white;
+	text-shadow:0px 0px 4px red, 0 0 6px blue, 0 0 8px pink;
+	background-color:rgb(20,69,69);
+	}
+	
+	.textS7{
+	font-family:verdana;
+	color:orange;
+	text-shadow:-1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+	background-color:rgb(20,69,69);
+	}
+	
+	.boxS1{
+	background-color:pink;
+	color:white;
+	font-size:26px;
+	width:300px;
+	height:100px;
+	box-shadow:4px 4px;
+	}
+	
+	.boxS2{
+	background-color:red;
+	color:white;
+	font-size:26px;
+	width:300px;
+	height:100px;
+	box-shadow:-8px 8px 5px darkred;
+	}
+	
+	.boxS3{
+	background-color:darkgreen;
+	color:white;
+	font-size:26px;
+	width:300px;
+	height:100px;
+	box-shadow: 8px 8px 5px 10px green;
+	}
+	
+	.boxS4{
+	background-color:purple;
+	color:white;
+	font-size:26px;
+	width:300px;
+	height:100px;
+	box-shadow: 8px 8px 5px black inset;
+	}
+	
+	.poloroid{
+	  width: 250px;
+	 /* two shadows: 1.for the footer section (content) 2. for the background blur effect so that it can be seen clearly*/
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+	  text-align: center;
+	}
+	.content{
+	padding:10px;
+	color:orange;
+	}
+	</style>
+    </head>
+    <body>
+    <h1>Shadows in CSS</h1>
+	<h2>There are two types of shadow effect in css:</h2>
+	<ul>
+		<li>text-shadow</li>
+		<li>box-shadow</li>
+	</ul>
+	<h1>#Text-Shadows:</h1>
+	<h1>The CSS text-shadow property applies shadow to text.<h1>
+	<h3>
+	In its simplest use, you only specify the horizontal shadow (2px) and the vertical shadow (2px):</h3>
+	<h3 class="textS1">1. Hello there!</h3>
+	
+	<h3>The same with red color as the third parameter:</h3>
+	<h3 class="textS2">2. With color!</h3>
+	
+	<h3>Adding blur to the shadow in pixels now the color will be on fourth parameter:</h3>
+	<h3 class="textS3">3. With blur!</h3>
+	
+	<h3>The following text is of red color with black shadow:</h3>
+	<h3 class="textS4">Cool text!</h3>
+	
+	<h3>If we were to make it glow neon we have to set the horizontal and vertical pixels to 0:</h3>
+	<h3 class="textS5">4. Neon blue!</h3>
+	
+	<h3>Text with multiple shadows[red,blue,pink] (we have to separate the color shadows with commas):</h3>
+	<h3 class="textS6">5. Colorful me!!</h3>
+	
+	<h3>You can also use the text-shadow property to create a plain border around some text (without shadows):<h3>
+	<h3 class="textS7">6. Text with border!!</h3>
+	<hr>
+	
+	<h1>#Box shadows:</h1>
+	
+	<h3>The same idea horizontal and vertical positioning of shadow:</h3>
+	<div class="boxS1">A div element with box shadow</div>
+	
+	<h3>The shadow color can be specified if not the default shadow will be the color of the text:
+	</h3>
+	<div class="boxS2">A div element with dark red color and blur</div>
+	
+	<h3>The box shadow with increased radius parameter that is in pixels specified after the blur parameter:
+	</h3>
+	<div class="boxS3">A div element with increased blur radius</div>
+	
+	<h3>The box shadow inset parameter:
+	</h3>
+	<div class="boxS4">A div element with inset shadow</div>
+	
+	<h3>Making a poloroid card:
+	</h3>
+	<div class="poloroid">
+		<img src="Images/Deers.jpg" width="100%" height="100%">
+		<div class="content">
+			<p>Deers in a forest.</p>
+		</div>
+	</div>
+    </body>
+	
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+    <head>
+
+    <title>Pseudo Classes Css</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body{
+            background-color:rgba(97, 19, 19);
+            color:white;
+        }
+        .syntax{
+            background-color:rgb(44, 38, 38);
+            color:green;
+            width:250px;
+            border: 2px solid white;
+        }
+        /* unvisited link */
+            a:link {
+            color: #FF0000;
+        }
+
+        /* visited link */
+            a:visited {
+            color: #00FF00;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: #FF00FF;
+        }
+
+        /* selected link */
+        a:active {
+            color: #0000FF;
+        }
+
+        i:lang(one){
+            color:darkgreen;
+            background-color:black;
+        }
+        input:focus{
+            outline:none;
+            border:2px solid red;
+        }
+
+        .placeholder p::selection{
+            background-color:pink;
+            color:indigo;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>What are Pseudo-classes?</h1>
+        <h4>A pseudo-class is used to define a special state of an element.
+            <br>
+            For example, it can be used to:
+        </h4>
+        <ul>
+            <li>Style an element when a user mouses over it</li>
+            <li>Style an element when it gets focus</li>
+            <li>Style visited and unvisited links differently</li>
+        </ul>
+        <h2>Syntax for pseudo classes:</h2>
+<div class="syntax">
+<pre>selector:pseudo-class {
+        property: value; 
+}</pre>
+        </div>
+        <a href="#">Click me</a>
+        <h3>The CSS used to make it:</h3>
+        <div class="syntax">
+            <code>
+                <pre>
+/* unvisited link */
+    a:link {
+    color: #FF0000;
+}
+
+/* visited link */
+    a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+</pre>
+            </code>
+        </div>
+        <h2><code>:lang() </code>pseudo-class allows you to define special rule for different languages.</h2>
+        <h4>See This for example: <i lang="one">This is some lang text</i> </h4>
+        <h3>The CSS for it:</h3>
+        <div class="syntax">
+            <pre>
+i:lang(one){
+    color:darkgreen;
+    background-color:black;
+}
+</pre>
+        </div>
+        <h2>Use of <code>:focus</code> pseudo-class</h2>
+        <input type="text" placeholder="Click me">
+        <h4>On clicking the input field as we know the white outline appears showing that it is focused. But, Clicking the input field above will make a red outline. The reason for that is the use of <code>:focus</code> pseudo-class.</h4>
+        <h3>The CSS for it:</h3>
+        <div class="syntax">
+            <pre>
+input:focus{
+    outline:none;
+    border:2px solid red;
+}
+</pre>
+        </div>
+        <h2>Use of <code>:selection</code> pseudo-class:</h2>
+        <div class="placeholder">
+            <p>Lorem Ipsum is simply dummy text</p>
+            <p>Lorem Ipsum is simply a paragraph</p>
+        </div>
+        <h4>On Selecting the text from the above it is different from the text selection in the entire document because of the use of <code>:selection</code>.</h4>
+        
+    </body>
+
+
+</html>

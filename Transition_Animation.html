@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+    <head>
+
+    <title>Transition & Animation</title>
+    <style>
+        body{
+            background-color:rgba(190, 158, 158, 0.775);
+            color:rgb(5, 70, 70);
+        }
+
+        .t{
+            font-size:24px;
+            background-color: white;
+            transition: font-size 2s, background 2s;
+            display: inline;
+        }
+        .t:hover{
+            font-size:36px;
+            background:none;
+        }
+
+        code{
+            color:rgb(216, 60, 60);
+        }
+
+        .t1{
+            width: 100px;
+            height: 100px;
+            background:red;
+            transition:width 2s, background 2s;
+        }
+        .t1:hover{
+            width:300px;
+            background:magenta;
+        }
+        .t2{
+            width:50px;
+            height:50px;
+            background:red;
+            margin-left:0px;
+            transition:width 3s, height 3s, background 3s, margin-left 2s;
+        }
+        .t2:hover{
+            width:100px;
+            height:100px;
+            background:blue;
+            margin-left:200px;
+        }
+
+        .t3{
+            width:100px;
+            height:100px;
+            background:blue;
+            border-radius: 0px;
+            transition:width 2s, height 3s, background 1s, rotate 5s, border-radius 3s;
+        }
+        .t3:hover{
+            width:200px;
+            height:200px;
+            background:black;
+            border-radius: 100px;
+        }
+
+        .t4 .tt4{
+            background:purple;
+            width:300px;
+            height:300px;
+            transition:width 2s, height 2s, background 2s, border-radius 2s;
+            margin: auto;
+        }
+        .t4:hover .tt4{
+            border-radius:100px;
+            width:100px;
+            height:100px;
+            background:green;
+        }
+        
+        .t5 .tt5{
+            background:royalblue;
+            margin:auto;
+            width:100px;
+            height:150px;
+            transition:background 2s, width 3s;
+            transition-delay: 1s;
+        }
+
+        .t5:hover .tt5{
+            background:red;
+            width:300px;
+        }
+
+        .t6 .tt6{
+            background:purple;
+            width:150px;
+            height:150px;
+            border-radius: 100px;
+            margin: auto;
+            transition: background 3s, border-radius 3s, transform 3s;
+        }
+
+        .t6:hover .tt6{
+            background:green;
+            border-radius:0px;
+            transform:rotate(90deg);
+        }
+        
+        .t7 .tt7 {
+            background:purple;
+            width:150px;
+            height:150px;
+            border-radius: 100px;
+            margin: auto;
+            transition: background 3s, border-radius 3s, transform 3s;
+        }
+        .t7:hover .tt7 {
+            background:green;
+            border-radius:0px;
+            transform:rotate(-90deg);
+        }
+
+        .t8 .tt8{
+            background:purple;
+            width:150px;
+            height:150px;
+            border-radius: 100px;
+            margin: auto;
+            transition: background 3s, border-radius 3s, transform 3s;
+        }
+        .t8:hover .tt8 {
+            background:green;
+            border-radius:0px;
+            transform:rotate(180deg);
+        }
+
+        .t9 .tt9{
+            background:purple;
+            width:150px;
+            height:150px;
+            border-radius: 100px;
+            margin: auto;
+            transition: background 3s, border-radius 3s, transform 5s;
+        }
+        .t9:hover .tt9 {
+            background:green;
+            border-radius:0px;
+            transform:rotate(360deg);
+        }
+
+        .t10 .tt10{
+            background:purple;
+            width:150px;
+            height:150px;
+            border-radius: 100px;
+            margin: auto;
+            transition: background 7s, border-radius 7s, transform 7s;
+        }
+        .t10:hover .tt10 {
+            background:green;
+            border-radius:0px;
+            transform:rotate(1080deg);
+        }
+        b{
+            margin: auto;
+        }
+        .t11{
+            background:blue;
+            color:white;
+            font-size:36px;
+            border-right:5px solid orange;
+            width:150px;
+            height:150px;
+            transition-timing-function: ease;
+            transition:width 5s, background 3s;
+        }.t11:hover{
+            width: 300px;
+            background:rgb(176, 176, 8);
+        }
+
+        .t12{
+            background:blue;
+            color:white;
+            font-size:36px;
+            border-right:5px solid orange;
+            width:150px;
+            height:150px;
+            transition-timing-function: linear;
+            transition:width 5s, background 3s;
+        }.t12:hover{
+            width: 300px;
+            background:rgb(176, 176, 8);
+        }
+
+        .t13{
+            background:blue;
+            color:white;
+            font-size:36px;
+            border-right:5px solid orange;
+            width:150px;
+            height:150px;
+            transition-timing-function: ease-in;
+            transition:width 5s, background 3s;
+        }.t13:hover{
+            width: 300px;
+            background:rgb(176, 176, 8);
+        }
+
+        .t14{
+            background:blue;
+            color:white;
+            font-size:36px;
+            border-right:5px solid orange;
+            width:150px;
+            height:150px;
+            transition-timing-function: ease-out;
+            transition:width 5s, background 3s;
+        }.t14:hover{
+            width: 300px;
+            background:rgb(176, 176, 8);
+        }
+
+        .t15{
+            background:blue;
+            color:white;
+            font-size:36px;
+            border-right:5px solid orange;
+            width:150px;
+            height:150px;
+            transition-timing-function: ease-in-out;
+            transition:width 5s, background 3s;
+        }.t15:hover{
+            width: 300px;
+            background:rgb(176, 176, 8);
+        }
+
+        .t16{
+            background:blue;
+            color:white;
+            font-size:36px;
+            border-right:5px solid orange;
+            width:150px;
+            height:150px;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            transition:width 5s, background 3s;
+        }.t16:hover{
+            width: 300px;
+            background:rgb(176, 176, 8);
+        }
+
+        hr{
+            border:5px solid black;
+            background-color:black;
+            border-radius: 5px;
+        }
+        @keyframes a1{
+            from { background:magenta;color:black; }
+            to { background:black; color:white;}
+        }
+        .a1{
+            background:magenta;
+            animation-name: a1;
+            animation-duration:3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a2{
+            0% {background:white;left:0px; top:0px;}
+            25% {background:lightpink; left:200px; top:0px;}
+            50% {background:magenta; left:200px; top:200px;}
+            75% {background:red; left:0px; top:200px;}
+            100% {background:blue; left:0px; top:0px;}
+        }
+
+        .a2{
+            width:200px;
+            height:200px;
+            background:white;
+            position: relative;
+            animation-name: a2;
+            animation-duration:5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a3{
+            from { background:black;border-radius: 0px; }
+            to { background:magenta;border-radius:100px; }
+        }
+
+        .a3{
+            width:200px;
+            height:200px;
+            background:black;
+            animation-name:a3;
+            animation-duration:5s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a4{
+            from { background:red;border-radius: 0px; }
+            to { background:green;border-radius:100px; }
+        }
+
+        .a4{
+            width:200px;
+            height:200px;
+            background:red;
+            animation-name:a4;
+            animation-duration:5s;
+            animation-delay: -2s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a5{
+            from { background:cyan;border-radius: 0px; top:0; left:0;}
+            to { background:orange;border-radius:100px;transform: rotate(360deg); top:0; left:400px;}
+        }
+
+        .a5{
+            width:200px;
+            height:200px;
+            background:cyan;
+            position: relative;
+            animation-name:a5;
+            animation-duration:5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a6{
+            /* The translate property takes x and y coordinates and changes the position of the element accordingly. */
+            0% { background:cyan;transform: translate(0px,0px);}
+            25% { background:orange;transform: translate(100px,200px);}
+            50% { background:red;transform: translate(400px,0px);}
+            75% {background:magenta; transform:translate(700px,200px);}
+            100% {background:black; transform:translate(1000px,0px);}
+        }
+
+        .a6{
+            width:200px;
+            height:200px;
+            background:cyan;
+            animation-name:a6;
+            border-radius:100px;
+            animation-duration:2s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a7{
+            /* The scale() method increases or decreases the size of an element (according to the parameters given for the width and height(How many times..)). */
+
+            0% { background:darkgreen;}
+            25% { background:green;transform: scale(2,2);}
+            50% { background:lime;transform: scale(2,3);}
+            75% {background:lightgreen; transform:scale(3,2);}
+            100% {background:lightgreen; transform:scale(3,3);}
+        }
+
+        .a7{
+            width:100px;
+            height:100px;
+            margin: auto;
+            background:rgb(24, 74, 24);
+            animation-name:a7;
+            animation-duration:5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a8{
+            /* The skew() method skews an element along the X and Y-axis by the given angles. */
+            0% { background:whitesmoke;}
+            25% { background:rgb(216, 216, 216);transform: skew(5deg,0deg);}
+            50% { background:rgb(168, 168, 168);transform: skew(10deg,0deg);}
+            75% {background:rgb(162, 162, 162); transform:skew(15deg,5deg);}
+            100% {background:white; transform:skew(20deg,10deg);}
+        }
+
+        .a8{
+            width:200px;
+            height:200px;
+            background:white;
+            animation-name:a8;
+            animation-duration:2s;
+            animation-iteration-count: infinite;
+        }
+
+
+        @keyframes a9{
+            0% { background:cyan;transform: translate(0px,0px);}
+            25% { background:orange;transform: translate(100px,200px);}
+            50% { background:red;transform: translate(400px,0px);}
+            75% {background:magenta; transform:translate(700px,200px);}
+            100% {background:black; transform:translate(1000px,0px);}
+        }
+
+        .a9{
+            width:200px;
+            height:200px;
+            background:cyan;
+            animation-name:a9;
+            border-radius:100px;
+            animation-duration:2s;
+            animation-direction:reverse;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a10{
+            0% { background:cyan;transform: translate(0px,0px);}
+            25% { background:orange;transform: translate(100px,200px);}
+            50% { background:red;transform: translate(400px,0px);}
+            75% {background:magenta; transform:translate(700px,200px);}
+            100% {background:black; transform:translate(1000px,0px);}
+        }
+
+        .a10{
+            width:200px;
+            height:200px;
+            background:cyan;
+            animation-name:a10;
+            border-radius:100px;
+            animation-duration:2s;
+            animation-direction:alternate;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a11{
+            0% { background:cyan;transform: translate(0px,0px);}
+            25% { background:orange;transform: translate(100px,200px);}
+            50% { background:red;transform: translate(400px,0px);}
+            75% {background:magenta; transform:translate(700px,200px);}
+            100% {background:black; transform:translate(1000px,0px);}
+        }
+
+        .a11{
+            width:200px;
+            height:200px;
+            background:cyan;
+            animation-name:a11;
+            border-radius:100px;
+            animation-duration:2s;
+            animation-direction:alternate-reverse;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a12{
+            from { background:orange;left:0px;}
+            to { background:red;left:600px;}
+        }
+
+        .a12{
+            width:100px;
+            height:100px;
+            background:orange;
+            animation-name:a12;
+            animation-duration:5s;
+            color:white;
+            position: relative;
+            border-right: 5px solid white;
+            font-size:32px;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a13{
+            from { background:orange;left:0px;}
+            to { background:red;left:600px;}
+        }
+
+        .a13{
+            width:100px;
+            height:100px;
+            background:orange;
+            animation-name:a13;
+            animation-duration:5s;
+            color:white;
+            position: relative;
+            border-right: 5px solid white;
+            font-size:32px;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a14{
+            from { background:orange;left:0px;}
+            to { background:red;left:600px;}
+        }
+
+        .a14{
+            width:100px;
+            height:100px;
+            background:orange;
+            animation-name:a14;
+            animation-duration:5s;
+            color:white;
+            position: relative;
+            border-right: 5px solid white;
+            font-size:32px;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a15{
+            from { background:orange;left:0px;}
+            to { background:red;left:600px;}
+        }
+
+        .a15{
+            width:100px;
+            height:100px;
+            background:orange;
+            animation-name:a15;
+            animation-duration:5s;
+            color:white;
+            position: relative;
+            border-right: 5px solid white;
+            font-size:32px;
+            animation-timing-function: ease-out;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a16{
+            from { background:orange;left:0px;}
+            to { background:red;left:600px;}
+        }
+
+        .a16{
+            width:100px;
+            height:100px;
+            background:orange;
+            animation-name:a16;
+            animation-duration:5s;
+            color:white;
+            position: relative;
+            border-right: 5px solid white;
+            font-size:32px;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a17{
+            from { background:orange;left:0px;}
+            to { background:red;left:600px;}
+        }
+
+        .a17{
+            width:100px;
+            height:100px;
+            background:orange;
+            animation-name:a17;
+            animation-duration:5s;
+            color:white;
+            position: relative;
+            border-right: 5px solid white;
+            font-size:32px;
+            animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes a18{
+            0% {transform: rotate(5deg)}
+            25% {transform: rotate(10deg) scale(2,2)}
+            50% {transform: rotate(-5deg) scale(1,1)}
+            75% {transform: rotate(-10deg) scale(0.7,0.7)}
+            100% {transform: rotate(-15deg) scale(3,3)}
+        }
+
+        .a18{
+            margin-left:450px;
+            animation-name: a18;
+            animation-duration:10s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+        }
+    </style>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width">
+
+    </head>
+    <body>
+    <h1>Transition & Animation</h1>
+    <h2 class="t">Transition:</h2>
+    <p>CSS transitions allows you to change property values smoothly, over a given duration.</p>
+    <h3>Transition properties:</h3>
+    <code>transition <br>
+        transition-delay <br>
+        transition-duration <br>
+        transition-property <br>
+        transition-timing-function
+    </code>
+    <h3>Adding transitions to the div box:</h3>
+    
+    <div class="t1"></div>
+    
+    <p>In this there is transition of width from 100px to 300px and background color from red to magenta.</p>
+    <h3>Multiple transitions:</h3>
+    
+    <div class="t2"></div>
+    
+    <br><br><br><br>
+    <p>If the transition involves change of position to the element like this one and the transition is at hover than the hover should be maintained to the direction of the element in order to complete the transition.</p>
+    <p>The transition is on width, height, background-color and margin-left.</p>
+
+    <h3>Another transition examples:</h3>
+    
+    <div class="t3"></div><span>The transition is on width, height, background-color and border-radius. </span>
+    
+    <div class="t4">
+        <div class="tt4"></div>
+        The transition is on width, height background-color, border-radius and the div of the transition element is inside the hover of another div element.
+    </div>
+
+    <!-- <h2>Specify the timing function of the Transition</h2> -->
+    <h2>Delay the Transition Effect</h2>
+    <p>The transition-delay property specifies a delay (in seconds) for the transition effect. <br><br>
+
+        The following example has a 1 second delay before starting:</p>
+
+    <div class="t5">
+        <div class="tt5"></div>
+    </div>
+
+    <p>For the delay the transition-delay property is used.</p>
+
+    <h3>Transition + Transformation</h3>
+    <h4>In This example the shape turns from circle to square, spins 90 degrees clockwise and changes color from purple to green:</h4>
+
+    <div class="t6">
+        <div class="tt6"></div>
+    </div>
+    <h4>The same but anti clock wise:</h4>
+
+    <div class="t7">
+        <div class="tt7"></div>
+    </div>
+
+    <h4>The same but it rotates 180 degrees:</h4>
+
+    <div class="t8">
+        <div class="tt8"></div>
+    </div>
+
+    <h4>The same but it rotates 360 degrees (the transition time has been increased for smoother transition):</h4>
+
+    <div class="t9">
+        <div class="tt9"></div>
+    </div>
+
+    <h4>The same but it rotates 1080 degrees (the transition time has been increased further for smoother transition):</h4>
+
+    <div class="t10">
+        <div class="tt10"></div>
+    </div>
+
+    <h1>Specify the Speed Curve of the Transition</h1>
+    <p>The <code>transition-timing-function </code>property specifies the speed curve of the transition effect.
+
+        The transition-timing-function property can have the following values:</p>
+    <ul>
+        <li> <code>ease</code> - specifies a transition effect with a slow start, then fast, then end slowly (this is default)</li>
+        <li> <code>linear</code> - specifies a transition effect with the same speed from start to end</li>
+        <li> <code>ease-in</code> - specifies a transition effect with a slow start</li>
+        <li> <code>ease-out</code> - specifies a transition effect with a slow end</li>
+        <li> <code>ease-in-out</code> - specifies a transition effect with a slow start and end</li>
+        <li> <code>cubic-bezier(n,n,n,n)</code> - lets you define your own values in a cubic-bezier function</li>
+    </ul>
+    <h4>Hover over the div elements below, to see the different speed curves:</h4>
+
+    <div class="t11">
+        <b>Ease</b>
+    </div>
+    <div class="t12">
+        <b>Linear</b>
+    </div>
+    <div class="t13">
+        <b>Ease-in</b>
+    </div>
+    <div class="t14">
+        <b>Ease-out</b>
+    </div>
+    <div class="t15">
+        <b>Ease-in-out</b>
+    </div>
+    <div class="t16">
+        <b>Cubic Bezier</b>
+    </div>
+
+    <hr>
+    <h1 class="a1">Animation</h1>
+    <p>Properties for animation:</p>
+    <ul>
+        <code>
+            <li>@keyframes</li>
+            <li>animation-name</li>
+            <li>animation-duration</li>
+            <li>animation-delay</li>
+            <li>animation-iteration-count</li>
+            <li>animation-direction</li>
+            <li>animation-timing-function</li>
+            <li>animation-fill-mode</li>
+            <li>animation</li>
+        </code>
+    </ul>
+    <h2>What are CSS Animations?</h2>
+
+    <h4>An animation lets an element gradually change from one style to another.
+        <br>
+        You can change as many CSS properties you want, as many times as you want.
+        <br>
+        To use CSS animation, you must first specify some keyframes for the animation.
+        <br>
+        Keyframes hold what styles the element will have at certain times.
+    </h4>
+
+        <h2>The @keyframes Rule</h2>
+
+        <h4>When you specify CSS styles inside the @keyframes rule, the animation will gradually change from the current style to the new style at certain times. In every single CSS animations the @keyframes are necessary.
+        <br>
+        To get an animation to work, you must bind the animation to an element.
+        <br>
+        The following example binds the "example" animation to the &ltdiv&gt element. The animation will last for 4 seconds, and it will gradually change the background-color of the &ltdiv&gt element from "red" to "yellow":</h4>
+            <h3>The Syntax of the Animation of Title of Animation with keyframes:</h3>
+        <div class="syntax">
+<pre>
+    @keyframes a1{
+        from { background:magenta;color:black; }
+        to { background:black; color:white;}
+    }
+    .a1{
+        background:magenta;
+        animation-name: a1;
+        animation-duration:3s;
+        animation-iteration-count: infinite;
+    }
+</pre>
+        </div>
+
+    <p>Note: the Use of other animation properties such as animation-name and animation-duration and animation-iteration-count.</p>
+
+    <h3><code>animation-name</code> is used to assign animation(keyframes) to a specific element.</h3>
+
+    <h3><code>animation-duration</code> is used to specify how long the animation will take to complete.</h3>
+
+    <h3><code>animation-iteration-count</code> is used to specify how many times the animation will iterate. it is set to iterate for infinite iteration.</h3>
+    <p>Note: We will be using <code>animation-iteration-</code> set to infinite for all the animations.</p>
+
+    <h4>In the example above we have specified when the style will change by using the keywords "from" and "to" (which represents 0% (start) and 100% (complete)).
+    <br><br>
+    It is also possible to use percent. By using percent, you can add as many style changes as you like.
+    <br><br>
+    The following example will change the background-color of the <div> element when the animation is 0% complete, 25% complete, 50% complete,75% complete and again when the animation is 100% complete:</h4>
+
+    <div class="a2"></div>
+
+    <br><br><br><br><br><br><br><br>
+
+    <h2><code>animation-delay:</code></h2>
+    <h3>The delay of the animation works the first time of the animation load if the animation-iteration-count is set to infinite.</h3>
+    <h3>The following animation is delayed by 2 seconds:</h3>
+
+    <div class="a3"></div>
+
+    <h3>We can also use negative delay. That will make the animation act like it has been going on for the seconds specified.</h3>
+    <h3>For example this animation will act like it has been going on for 2 seconds.</h3>
+
+    <div class="a4"></div>
+
+    <h3>Again it will only work once the animation has started and will not repeat if the animation-iteration-count is set to infinite.</h3>
+    <h2>Animation + Transform:</h2>
+
+    <div class="a5"></div>
+    <p>The animation has started from background color cyan, square shape and from top 0 and left 0 to the background color orange and border-radius 100px to make it a circle and it undergoes a total of 360 degrees of rotation transformation to the point of top 0 and left 400px.</p>
+
+    <h2>Another examples: (Bouncy ball)</h2>
+
+    <div class="a6"></div>
+
+    <br><br><br><br><br><br><br><br>
+    <h2>Resizing box(jello):</h2>
+    <br><br><br><br><br><br>
+
+    <div class="a7"></div>
+
+    <br><br><br>
+    <h2>Paper floating:</h2>
+
+    <div class="a8"></div>
+    
+    <br><br>
+    <h2>Run Animation in Reverse Direction or Alternate Cycles</h2>
+    <h4>The <code>animation-direction</code> property specifies whether an animation should be played forwards, backwards or in alternate cycles.
+    <br>
+    The animation-direction property can have the following values:</h4>
+
+    <ul>
+        <li><code>normal</code> - The animation is played as normal (forwards). This is default</li>
+        <li><code>reverse</code> - The animation is played in reverse direction (backwards)</li>
+        <li><code>alternate</code> - The animation is played forwards first, then backwards</li>
+        <li><code>alternate-reverse</code> - The animation is played backwards first, then forwards</li>
+    </ul>
+
+    <h3>We will use the bouncy ball animation for observing the animation-direction:</h3>
+    <p>Note: The bouncy ball animation itself is set on normal direction.</p>
+    <h2>Bouncy Ball on reverse:</h2>
+
+    <div class="a9"></div>
+
+    <br><br><br><br><br><br><br>
+    <h2>Bouncy Ball on alternate:</h2>
+
+    <div class="a10"></div>
+
+    <br><br><br><br><br><br><br>
+    <h2>Bouncy Ball on alternate-reverse:</h2>
+
+    <div class="a11"></div>
+
+    <br><br><br><br><br><br><br>
+
+    <h2>Specify the Speed Curve of the Animation:</h2>
+    <h4>The animation-timing-function property specifies the speed curve of the animation.
+    <br><br>
+    The animation-timing-function property can have the following values:</h4>
+    <ul>
+        <li><code>ease</code> - Specifies an animation with a slow start, then fast, then end slowly (this is default)</li>
+        <li><code>linear</code> - Specifies an animation with the same speed from start to end</li>
+        <li><code>ease-in</code> - Specifies an animation with a slow start</li>
+        <li><code>ease-out</code> - Specifies an animation with a slow end</li>
+        <li><code>ease-in-out</code> - Specifies an animation with a slow start and end</li>
+        <li><code>cubic-bezier(n,n,n,n)</code> - Lets you define your own values in a cubic-bezier function</li>
+    </ul>
+
+    <h3>Example explaining each and every animation-timing-function:</h3>
+
+    <div class="a12">ease</div>
+
+    <div class="a13">linear</div>
+
+    <div class="a14">ease-in</div>
+
+    <div class="a15">ease-out</div>
+
+    <div class="a16">ease-in-out</div>
+
+    <div class="a17">cubic-bezier(n,n,n,n)</div>
+
+    <h2>Specify the fill-mode For an Animation</h2>
+
+    <h4>CSS animations do not affect an element before the first keyframe is played or after the last keyframe is played. The animation-fill-mode property can override this behavior.
+    <br><br>
+    The <code>animation-fill-mode</code> property specifies a style for the target element when the animation is not playing (before it starts, after it ends, or both).
+    <br><br>
+    The animation-fill-mode property can have the following values:
+    </h4>
+    <ul>
+        <li><code>none</code> - Default value. Animation will not apply any styles to the element before or after it is executing</li>
+        <li><code>forwards</code> - The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)</li>
+        <li><code>backwards</code> - The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period</li>
+        <li><code>both</code> - The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions</li>
+    </ul>
+    <h2>The animation which uses every property of the animation:</h2>
+    <div class="a18">
+        <img src="Images/heart.png" alt="heart png" width="50" height="50" style="filter: invert();">
+        <p style="display:inline;font-size:52px;color:rgb(134, 68, 68);text-shadow: 0 0 10px lime,0 0 6px green, 0 0 4px darkgreen;">Idris Vohra</p>
+    </div>
+    </body>
+
+
+</html>

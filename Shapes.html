@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+    <head>
+
+    <title>Shapes</title>
+    <style>
+        body {
+            background-color:rgb(79, 22, 79);
+        }
+        .square {
+            display: inline-block;
+            width:100px;
+            height:100px;
+            margin:20px;
+            background-color:red;
+            border:3px inset white;
+        }
+        .rect {
+            display: inline-block;
+            width:170px;
+            height:100px;
+            margin:20px;
+            border:3px inset white;
+            background-color:blue;
+        }
+        .circ {
+            display: inline-block;
+            width:100px;
+            height:100px;
+            margin:20px;
+            border:3px inset white;
+            background-color:green;
+            border-radius: 100px;
+        }
+        .triangle {
+            display: inline-block;
+            width:0px;
+            height: 0px;
+            margin: 20px;
+            background-color:transparent;
+            border-right: 80px inset transparent;
+            border-bottom: 80px solid blue;
+            border-left: 80px inset transparent;
+        }
+
+        .rhombus {
+            display:inline-block;
+            width: 100px;
+            height:100px;
+            margin:20px;
+            background-color:purple;
+            border:3px inset white;
+            transform: rotate(45deg);
+        }
+
+        .parallelogram{
+            display: inline-block;
+            border:3px inset white;
+            background-color:yellow;
+            width:200px;
+            height:100px;
+            margin:20px;
+            transform: skew(10deg,10deg) rotate(-10deg);
+        }
+        .names span{
+            color:black;
+            font-size:26px;
+            padding: 45px;
+        }
+    </style>
+    </head>
+    <body>
+    <div class="square"></div>
+
+
+    <div class="rect"></div>
+
+
+    <div class="circ"></div>
+
+
+    <div class="triangle"></div>
+
+    <div class="rhombus"></div>
+
+    <div class="parallelogram"></div>
+
+    <div class="names">
+        <span>Square</span>
+        <span>Rectangle</span>
+        <span>Circle</span>
+        <span>Triangle</span>
+        <span>Rhombus</span>
+        <span>Parallelogram</span>
+    </div>
+    </body>
+
+
+</html>

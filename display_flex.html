@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+  <head>
+    <title>Flexbox and all</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      ::-webkit-scrollbar{
+      width:20px;
+    }
+    ::-webkit-scrollbar-track{
+      background-color:green;
+    }
+    ::-webkit-scrollbar-thumb{
+      background-image: url("Images/Candy cone pattern.svg");
+      background-size:contain;
+      height: 100px;
+      border: 1px solid red;
+      background-position: center;
+    }
+      body {
+        background-color: crimson;
+        color: white;
+      }
+      .note::selection {
+        background-color: gold;
+        color: blue;
+      }
+      div::selection {
+        background-color: crimson;
+        color: navy;
+      }
+      code {
+        color: rgb(85, 11, 11);
+        text-decoration: 2px red underline;
+      }
+
+      p {
+        background-color: chocolate;
+        display: inline-block;
+      }
+      .container1 {
+        background-color: darkorchid;
+        display: flex;
+      }
+      .container1 h1 {
+        background-color: hotpink;
+        margin: 10px;
+        width: 800px;
+        text-align: center;
+        /* For the reference of the use of line-height property goto line 496. */
+        line-height: 80px;
+      }
+
+      /* flex-wrap: */
+      .fw1 {
+        background-color: darkslategray;
+        display: flex;
+      }
+
+      .fw1 div {
+        font-size: 30px;
+        background-color: black;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+        color: white;
+      }
+
+      .fw2 {
+        background-color: orchid;
+        display: flex;
+        flex-wrap: nowrap;
+        /* It will make the boxes wrap(by becoming single-line and resizing the boxes by width). as the webpage resizes. */
+      }
+
+      .fw2 div {
+        font-size: 30px;
+        background-color: black;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+        color: white;
+      }
+
+      .fw3 {
+        background-color: cornsilk;
+        display: flex;
+        flex-wrap: wrap;
+        /* It will make the boxes wrap(by becoming multiline) as the webpage resizes */
+      }
+
+      .fw3 div {
+        font-size: 30px;
+        background-color: black;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+        color: white;
+      }
+
+      .fw4 {
+        background-color: coral;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        /* It is the same as wrap except the cross-start and cross-end directions are swapped */
+      }
+
+      .fw4 div {
+        background-color: black;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+        color: white;
+      }
+
+      .imp {
+        color: maroon;
+        background-color: rgba(255, 240, 245, 0.776);
+      }
+
+      .note {
+        color: green;
+        background-color: floralwhite;
+        font-size: 26px;
+        text-decoration: 2px dashed underline red;
+      }
+
+      /* flex-direction: */
+      .fd1 {
+        background-color: olivedrab;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .fd1 div {
+        background-color: pink;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .fd2 {
+        background-color: firebrick;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .fd2 div {
+        background-color: pink;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .fd3 {
+        background-color: darkorange;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .fd3 div {
+        background-color: pink;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .fd4 {
+        background-color: salmon;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .fd4 div {
+        background-color: pink;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      /* flex-flow: */
+      /* The flex-flow property is the shorthand property for the flex-direction & flex-wrap */
+      .ff1 {
+        background-color: darkmagenta;
+        display: flex;
+        flex-flow: row-reverse wrap;
+      }
+
+      .ff1 div {
+        background-color: indigo;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      /* justify-content */
+      .jc1 {
+        background-color: darkslateblue;
+        display: flex;
+        justify-content: center;
+      }
+
+      .jc1 div {
+        background-color: silver;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .jc2 {
+        background-color: darkgoldenrod;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .jc2 div {
+        background-color: silver;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .jc3 {
+        background-color: royalblue;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .jc3 div {
+        background-color: silver;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .jc4 {
+        background-color: forestgreen;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .jc4 div {
+        background-color: silver;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .jc5 {
+        background-color: khaki;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .jc5 div {
+        background-color: silver;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .jc6 {
+        background-color: khaki;
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .jc6 div {
+        background-color: silver;
+        font-size: 30px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      /* align-items */
+      .ai1 {
+        background-color: khaki;
+        display: flex;
+        align-items: center;
+        height: 400px;
+      }
+
+      .ai1 div {
+        background-color: springgreen;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .ai2 {
+        background-color: navy;
+        display: flex;
+        align-items: flex-start;
+        height: 400px;
+      }
+
+      .ai2 div {
+        background-color: springgreen;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .ai3 {
+        background-color: silver;
+        display: flex;
+        align-items: flex-end;
+        height: 400px;
+      }
+
+      .ai3 div {
+        background-color: springgreen;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .ai4 {
+        background-color: darkcyan;
+        display: flex;
+        align-items: stretch;
+        height: 400px;
+      }
+
+      .ai4 div {
+        background-color: springgreen;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .ai5 {
+        background-color: crimson;
+        display: flex;
+        align-items: baseline;
+      }
+
+      .ai5 div {
+        background-color: springgreen;
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      /* align-content */
+      .ac1 {
+        background-color: navajowhite;
+        display: flex;
+        flex-wrap: wrap;
+        width: 34%;
+        align-content: space-between;
+        height: 400px;
+      }
+
+      .ac1 div {
+        background-color: rgb(74, 73, 64);
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .ac2 {
+        background-color: navajowhite;
+        display: flex;
+        flex-wrap: wrap;
+        width: 34%;
+        align-content: space-around;
+        height: 400px;
+      }
+
+      .ac2 div {
+        background-color: rgb(74, 73, 64);
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .ac3 {
+        background-color: navajowhite;
+        display: flex;
+        flex-wrap: wrap;
+        width: 34%;
+        align-content: stretch;
+        height: 400px;
+      }
+
+      .ac3 div {
+        background-color: rgb(74, 73, 64);
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .ac4 {
+        background-color: navajowhite;
+        display: flex;
+        flex-wrap: wrap;
+        width: 34%;
+        align-content: center;
+        height: 400px;
+      }
+
+      .ac4 div {
+        background-color: rgb(74, 73, 64);
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .ac5 {
+        background-color: navajowhite;
+        display: flex;
+        flex-wrap: wrap;
+        width: 34%;
+        align-content: flex-start;
+        height: 400px;
+      }
+
+      .ac5 div {
+        background-color: rgb(74, 73, 64);
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+      .ac6 {
+        background-color: navajowhite;
+        display: flex;
+        flex-wrap: wrap;
+        width: 34%;
+        align-content: flex-end;
+        height: 400px;
+      }
+
+      .ac6 div {
+        background-color: rgb(74, 73, 64);
+        font-size: 30px;
+        margin: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .c {
+        background-color: lightblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+      }
+      .c div {
+        width: 80px;
+        height: 80px;
+        background-color: fuchsia;
+      }
+
+      /* flex items table */
+      .fiTable{
+        font-size:24px;
+        margin:auto;
+        height:500px;
+      }
+
+      .fiTable th{
+        border: 2px solid lightblue;
+        background-color:palevioletred;
+      }
+      .fiTable td{
+        text-align: center;
+        border: 1px solid white;
+        padding: 20px;
+      }
+      .fiTable tr:nth-child(even){
+        background-color:rgba(128, 128, 128, 0.54);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Flexbox Layout Module</h1>
+    <p>Before the Flexbox Layout module, there were four layout modes:</p>
+    <ul>
+      <li>Block, for sections in a webpage</li>
+      <li>Inline, for text</li>
+      <li>Table, for two-dimensional table data</li>
+      <li>Positioned, for explicit position of an element</li>
+    </ul>
+
+    <p>
+      A Flexible Layout must have a parent element with the
+      <em>display</em> property set to <em>flex</em>.
+    </p>
+
+    <h4>The flex container properties are:</h4>
+    <ul>
+      <li>
+        <a href="#flex-wrap"><code>flex-wrap</code></a>
+      </li>
+      <li>
+        <a href="#flex-direction"><code>flex-direction</code></a>
+      </li>
+      <li>
+        <a href="#flex-flow"><code>flex-flow</code></a>
+      </li>
+      <li>
+        <a href="#justify-content"><code>justify-content</code></a>
+      </li>
+      <li>
+        <a href="#align-items"><code>align-items</code></a>
+      </li>
+      <li>
+        <a href="#align-content"><code>align-content</code></a>
+      </li>
+    </ul>
+    <br />
+    <hr />
+    <br />
+    <p>The container with element with display block (h1):</p>
+    <div class="container1">
+      <h1>This is a section with display Block</h1>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <h1>CSS <code id="flex-wrap">flex-wrap</code>:</h1>
+    <p>The Container with display block (div) without flex-wrapping:</p>
+    <div class="fw1">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+      <div>D</div>
+      <div>E</div>
+      <div>F</div>
+      <div>G</div>
+      <div>H</div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <p>The Container with flex-wrap set to nowrap:</p>
+    <p>
+      It will make the boxes wrap(by becoming single-line and resizing the boxes
+      by width and height) as the webpage resizes. It is the same as above hence
+      every container with display flex has flex-wrap set to nowrap.
+    </p>
+
+    <div class="fw2">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+      <div>D</div>
+      <div>E</div>
+      <div>F</div>
+      <div>G</div>
+      <div>H</div>
+    </div>
+    <h3 class="imp">
+      The div boxes in the containers has the css property width. If we use
+      padding instead of width the flex display will not be responsive.
+    </h3>
+
+    <br />
+    <hr />
+    <br />
+    <p>The Container with flex-wrap set to wrap:</p>
+    <p>
+      It will make the boxes wrap(by becoming multiline) as the webpage resizes.
+    </p>
+
+    <div class="fw3">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+      <div>D</div>
+      <div>E</div>
+      <div>F</div>
+      <div>G</div>
+      <div>H</div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <p>The Container with flex-wrap set to wrap-reverse:</p>
+    <p>
+      It is the same as wrap except the cross-start and cross-end directions are
+      swapped.
+    </p>
+
+    <div class="fw4">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+      <div>D</div>
+      <div>E</div>
+      <div>F</div>
+      <div>G</div>
+      <div>H</div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <div class="note">
+      The css property line-height is used in all the containers above. What
+      that does is it Determines the block-progression dimension of the text
+      content area of an inline box. <br /><br />
+      In simple language it makes the box with the height specified infront of
+      the property and makes the content in the box preferably text, Align
+      vertically in the middle of that height. <br />
+      <em
+        >It is only intended to be used when there is content in the box.
+        Otherwise it does'nt work!.</em
+      >
+    </div>
+    <br />
+    <hr />
+    <br />
+    <h1>CSS <code id="flex-direction">flex-direction</code> :</h1>
+    <p>The Container with flex-direction set to column:</p>
+
+    <div class="fd1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p>The Container with flex-direction set to column-reverse:</p>
+
+    <div class="fd2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p>The Container with flex-direction set to row (row is the default.):</p>
+
+    <div class="fd3">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p>The Container with flex-direction set to row-reverse:</p>
+
+    <div class="fd4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+    <h1>CSS <code id="flex-flow">flex-flow</code> :</h1>
+    <h3 class="imp">
+      The flex-flow property is the shorthand property for the
+      <code>flex-direction</code> & <code>flex-wrap</code>.
+    </h3>
+
+    <p>The Container with flex-flow property set to row-reverse wrap:</p>
+
+    <div class="ff1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+    <br />
+    <hr />
+    <br />
+
+    <h1>CSS <code id="justify-content">justify-content</code> :</h1>
+    <h3 class="imp">
+      The justify-content property is used to align the flex items horizontally.
+    </h3>
+
+    <p><code>justify-content</code> : center</p>
+    <div class="jc1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p><code>justify-content</code> : flex-start (default)</p>
+    <div class="jc2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div style="position: absolute; right: 10px;">8</div>
+    </div>
+
+    <p><code>justify-content</code> : flex-end</p>
+    <div class="jc3">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p><code>justify-content</code> : space-around</p>
+    <div class="jc4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p><code>justify-content</code> : space-between</p>
+    <div class="jc5">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p>
+      <code>justify-content</code> : space-evenly and without
+      <code>margin</code>
+    </p>
+    <div class="jc6">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <h1>CSS <code id="align-items">align-items</code> :</h1>
+    <h3 class="imp">
+      The align-items property is used to align the flex items vertically.
+    </h3>
+
+    <div class="note">
+      To demonstrate this we are setting the height of the container to 400px.
+    </div>
+
+    <p><code>align-items</code> : center</p>
+    <div class="ai1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p><code>align-items</code> : flex-start</p>
+    <div class="ai2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p><code>align-items</code> : flex-end</p>
+    <div class="ai3">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p><code>align-items</code> : stretch</p>
+    <div class="ai4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p><code>align-items</code> : baseline</p>
+    <div class="note">
+      In the following container the font-size of the boxes has been changed to
+      see the effect of the <code>align-items</code> baseline. What it does is,
+      according to the baseline of the fonts it resizes the boxes to make the
+      baseline fit to an invisible line on the baseline of the font on the first
+      position.
+    </div>
+
+    <br />
+    <div class="ai5">
+      <div><h1>1</h1></div>
+      <div><h6>2</h6></div>
+      <div><h3>3</h3></div>
+      <div><h2>4</h2></div>
+      <div><small>5</small></div>
+      <div><h5>6</h5></div>
+      <div><h4>7</h4></div>
+      <div>8</div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <h1>CSS <code id="align-content">align-content</code> :</h1>
+    <h3 class="imp">
+      The <code>align-content</code> property is used to align the flex lines.
+    </h3>
+
+    <div class="imp">
+      Modifies the behavior of the <code>flex-wrap</code> property. It is
+      similar to <code>align-items</code>, but instead of aligning flex items,
+      it aligns flex lines.
+    </div>
+    <br />
+
+    <div class="note">
+      In these examples we use a 400 pixels high container, with the
+      <code>flex-wrap</code> property set to wrap and <code>width</code> set to
+      34% to better demonstrate the <code>align-content</code> property.
+    </div>
+
+    <p><code>align-content</code>: space-between</p>
+
+    <div class="ac1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+    <p>
+      The <code>space-between</code> value displays the flex lines with equal
+      space between them. in simple language if the boxes wraps from that
+      baseline the space is given, that will also be given to the line wrap on
+      the next line.
+    </p>
+
+    <p><code>align-content</code>: space-around</p>
+
+    <div class="ac2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p><code>align-content</code>: stretch</p>
+
+    <div class="ac3">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p><code>align-content</code>: center</p>
+    <div class="imp">
+      The "align-content: center;" displays the flex lines in the middle of the
+      container:
+    </div>
+    <br />
+    <div class="ac4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p><code>align-content</code>: flex-start</p>
+
+    <div class="ac5">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p><code>align-content</code>: flex-end</p>
+
+    <div class="ac6">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+    <h1>The perfect center aligning:</h1>
+
+    <div class="c">
+      <div></div>
+    </div>
+
+    <p>
+      This is achieved by
+      <code>align-items:center;justify-content:center;</code>
+    </p>
+
+    <h1>There are flex item properties in CSS which we will not be going in detail coz they are fairly straightforward and simple.</h1>
+    <p>The list of the flex item properties and its descriptions:</p>
+    <table class="fiTable">
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>align-self</td>
+            <td>Specifies the alignment for a flex item (overrides the flex container's align-items property)</td>
+        </tr>
+        <tr>
+            <td>flex-grow</td>
+            <td>Specifies how much a flex item will grow relative to the rest of the flex items inside the same container</td>
+        </tr>
+        <tr>
+            <td>flex-shrink</td>
+            <td>Specifies how much a flex item will shrink relative to the rest of the flex items inside the same container</td>
+        </tr>
+        <tr>
+            <td>flex-basis</td>
+            <td>Specifies the initial length of a flex item</td>
+        </tr>
+        <tr>
+            <td>order</td>
+            <td>Specifies the order of the flex items inside the same container</td>
+        </tr>
+    </table>
+    <div class="note">Last notes:
+      <br>The elements of a container with display flex are treated same no matter if they are div or span if the css property is set the same in both cases. So block or inline elements are treated as flex elements once the container is set to display flex.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+    <head>
+
+    <title></title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width">
+    <style>
+        /* For background color and color */
+    body{
+        background-color:rgb(71, 31, 71);
+        color:white;
+    }
+
+    /* For showing the CSS properties in the document */
+    code{
+        color:rgb(216, 60, 60);
+    }
+
+    /* First output */
+    .output{
+        counter-reset: counter;
+        background-color:rgb(18, 18, 32);
+    }
+    /* ::before means the content before the content in the element. Counter function returns the counting object and counter-increment increments the counter every time the element is used*/
+    h2::before {
+        counter-increment: counter;
+        content: "Num " counter(counter) ": ";
+    }
+
+    /* the css code is in the syntax */
+    .syntax{
+        color:goldenrod;
+        background-color:rgb(144, 104, 110);
+    }
+
+    /* The second output is in The second */
+    .second{
+        counter-reset: section;
+        background-color:rgb(18, 18, 32);
+    }
+    /* section is the main section it has the counter-reset of the subsection*/
+    .section{
+        color:orange;
+        font-size:36px;
+        counter-reset: subsection;
+    }
+    .section::before{
+        counter-increment: section;
+        content: "Section " counter(section)". ";
+    }
+    /* The color and size of the subsection*/
+    .subsection{
+        color:red;
+        font-size:24px;
+    }
+    /* The subsection is incremented by one every time the element is with the class is used*/
+    .subsection::before{
+        counter-increment: subsection;
+        content: counter(section) "." counter(subsection) " ";
+    }
+
+    </style>
+    </head>
+    <body class="body" id="body">
+    <h1>Automatic Numbering With Counters</h1>
+    <h3>CSS counters are like "variables". The variable values can be incremented by CSS rules (which will track how many times they are used).
+    <br><br>
+    To work with CSS counters we will use the following properties:</h3>
+    <ul>
+        <li><code>counter-reset</code> - Creates or resets a counter</li>
+        <li><code>counter-increment</code> - Increments a counter value</li>
+        <li><code>content</code>- Inserts generated content</li>
+        <li><code>counter() or counters()</code> function - Adds the value of a counter to an element</li>
+    </ul>
+    <h3>To use a CSS counter, it must first be created with <code>counter-reset</code> it should have a random name that should follow through the CSS of the counter.</h3>
+
+    <h1>Using CSS Counters:</h1>
+    <div class="output">
+
+        <h2>HTML Tutorial</h2>
+        <h2>CSS Tutorial</h2>
+        <h2>JavaScript Tutorial</h2>
+        <h2>Python Tutorial</h2>
+        <h2>SQL Tutorial</h2>
+    </div>
+    <h3>The CSS for the above:</h3>
+    <div class="syntax">
+<pre>
+
+body{
+    background-color:rgb(71, 31, 71);
+    color:white;
+    counter-reset: counter;
+}
+h2::before {
+    counter-increment: counter;
+    content: "Num " counter(counter) ": ";
+}
+
+</pre>
+</div>
+    <h1>Nested counters:</h1>
+    <div class="second">
+
+        <p class="section">Programming tutorials</p>
+
+        <p class="subsection">Python</p>
+        <p class="subsection">Java</p>
+        <p class="subsection">C</p>
+        <p class="subsection">C++</p>
+        <p class="subsection">PHP</p>
+
+        <p class="section">Web Development tutorials</p>
+
+        <p class="subsection">HTML</p>
+        <p class="subsection">CSS</p>
+        <p class="subsection">JavaScript</p>
+    </div>
+    <h3>The CSS for the above:</h3>
+    <div class="syntax">
+<pre>
+
+.second{
+    counter-reset: section;
+    background-color:rgb(18, 18, 32);
+}
+.section{
+    color:orange;
+    font-size:36px;
+    counter-reset: subsection;
+}
+.section::before{
+    counter-increment: section;
+    content: "Section " counter(section)". ";
+}
+
+.subsection{
+    color:red;
+    font-size:24px;
+}
+
+.subsection::before{
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection) " ";
+}
+
+</pre>
+    </div>
+    </body>
+
+
+</html>

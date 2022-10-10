@@ -1,0 +1,48 @@
+? Think first that how you would like to position the particular dropdown source...
+
+*is it to be horizontal or vertical
+*keep in mind all the decorative ideas of properties of css after first making the basic structure in html.
+*for eg: shadows, border, background, font-style, etc..
+
+imp: the source can be whatever a text, a link, a button...
+imp: The dropdown content also can be whatever an image, a link, but mostly ul or ol is preferred as it provides the dropdown content a simple structure.
+
+#One thing to keep in mind is that the element we chose to contain the dropdown content should be having the dropdown content itself otherwise the css event on hover dropdown will not be triggered.
+#for example:
+
+// The wrong way:
+
+// the html of a button hover dropdown:
+|<button class="source">Hover on me!!</button>
+|<ul class="dropdown-content">
+|<li><a>Option 1</a></li>
+|<li><a>Option 2</a></li>
+|<li><a>Option 3</a></li>
+|</ul>
+
+// It's CSS:
+|.dropdown-content{
+|    display:none;
+|}
+|.source:hover .dropdown-content{
+|    display:inline-block;// This wouldn't create a dropdown..
+|}
+
+// The correct way:
+
+// the html of a button hover dropdown:
+|<button class="source">Hover on me!!
+|<ul class="dropdown-content">
+|<li><a>Option 1</a></li>
+|<li><a>Option 2</a></li>
+|<li><a>Option 3</a></li>
+|</ul>
+|</button>
+
+// It's CSS:
+|.dropdown-content{
+|    display:none;
+|}
+|.source:hover .dropdown-content{
+|    display:inline-block;
+|}

@@ -1,0 +1,13 @@
+The css selectors work by following a pattern of precedence.
+
+When The id of an element is used as a selector in css it becomes the main precedence of styling.
+Therefore the most precedence is given to the id of the element as a selector.
+
+The second attribute of an element is class the class has a precedence if there is no selector of the element by id.
+
+The third precedence is given to the tag name of the element itself. It can only show the applied styling if there is no selector of that element by id or by the class.
+
+The precedence table:
+1. Id of the element
+2. Class of the element
+3. Tag name of the element

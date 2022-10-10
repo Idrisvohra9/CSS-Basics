@@ -1,0 +1,8 @@
+// Website color pallet:
+
+A webpage should have three type of colors and ratio:
+1. Main color (primary color)	60
+2. Secondary color			30
+3. accent color				10
+** White and black color also count as a color**
+** We can use more than 3 colors but the additional color should be used to highlight other elements or provide a color feature or to be used as a contranst for other colors in the pallet

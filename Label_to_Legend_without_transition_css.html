@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+    <head>
+
+    <title></title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width">
+    <style>
+        .name{
+            /* padding:10px; */
+            font-size: 30px;
+            border:none;
+            display: inline;
+            margin-top: 5px;
+        }
+        .name:focus{
+            outline:none;
+            margin-top: -5px;
+        }
+        legend{
+            display: none;
+        }
+        fieldset{
+            margin-top: 10px;
+            width: 370px;
+            height: 40px;
+        }
+        label{
+            font-size:24px;
+            position: absolute;
+            top:24px;
+            opacity: 0.7;
+        }
+    </style>
+    </head>
+    <body>
+    <fieldset>
+        <legend>Name:</legend>
+        <label for="name">Name:</label>
+        <input type="text" class="name" onfocus="Change();">
+    </fieldset>
+    <script>
+        function Change(){
+            let label = document.querySelector("label");
+            let legend = document.querySelector("legend");
+
+            legend.style.display = "inline";
+            label.style.display = "none";
+        }
+        legend.style.display = "none";
+        label.style.display = "inline";
+    </script>
+    </body>
+
+
+</html>
