@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+<head>
+
+    <title></title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            background-color: rgb(80, 185, 220);
+            color: #1d1d2b;
+            font-family: "Helvetica Neue", Helvetica;
+            margin: 30px;
+        }
+
+        .container {
+            padding: 20px;
+            border-radius: 20px;
+            background-color: #1d1d2b;
+            color: aliceblue;
+            /* display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; */
+        }
+
+        .grid-container {
+            display: grid;
+            row-gap: 0;
+            padding: 10px;
+            background-color: #2196F3;
+
+        }
+
+
+
+        .grid-container div {
+            text-align: center;
+            background-color: aliceblue;
+            color: black;
+            padding: 20px;
+            border: 1px solid darkgreen;
+        }
+
+        .n-1 {
+            grid-template-columns: auto auto auto;
+        }
+
+        .n-2 {
+            grid-template-columns: auto auto auto auto;
+        }
+
+        .n-3 {
+            grid-template-columns: auto auto auto;
+            row-gap: 20px;
+        }
+
+        .n-4 {
+            grid-template-columns: auto auto auto;
+            column-gap: 20px;
+        }
+
+        .n-5 {
+            grid-template-columns: auto auto auto;
+            gap: 20px;
+        }
+
+        .n-5 .item1 {
+            grid-column: 1 / 3;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .n-5 .item7 {
+            grid-column: 2 / 4;
+        }
+
+        .n-6 {
+            grid-template-columns: 60px 60px 60px;
+            justify-content: space-evenly;
+        }
+
+        .n-7 {
+            grid-template-columns: auto auto auto;
+            height: 600px;
+            /* grid-template-rows: 60px 60px 60px; */
+        }
+
+        img {
+            background-color: white;
+        }
+
+        code {
+            margin-top: 25px;
+            color: crimson;
+        }
+
+        pre {
+            display: inline;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Learning Grid in CSS</h1>
+
+    <div class="container">
+        <section>
+
+            <h2>Columns in Grid Container:</h2>
+            <h3>Container with three columns</h3>
+            <div class="grid-container n-1">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <p>This was achieved by including this css property on the container/parent element:</p>
+            <code>
+                <pre>
+                    grid-template-columns: auto auto auto;
+                </pre>
+            </code>
+        </section>
+        <section>
+
+            <h3>Similarly we can specify a custom width of each column if we want.</h3>
+            <div class="grid-container n-5" style="grid-template-columns: 80px 120px auto;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <p>This was achieved by including this css property on the container/parent element:</p>
+            <code>
+                <pre>
+                    grid-template-columns: 80px 120px auto;
+                </pre>
+            </code>
+        </section>
+
+        <section>
+
+            <h3>Container with 4 columns</h3>
+            <div class="grid-container n-2">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>This was achieved by including this css property on the container/parent element:</p>
+            <code>
+                <pre>
+                    grid-template-columns: auto auto auto auto;
+                </pre>
+            </code>
+        </section>
+        <section>
+
+            <h3>We can also specify the height of rows:</h3>
+            <div class="grid-container n-5" style="grid-template-rows: 80px 120px auto;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <p>This was achieved by including this css property on the container/parent element:</p>
+            <code>
+                <pre>
+                    grid-template-rows: 80px 120px auto;
+                </pre>
+            </code>
+        </section>
+        <section>
+
+            <h2>Gap properties:</h2>
+            <img src="Images/grid_gaps.png" alt="">
+            <h3>row-gap</h3>
+            <div class="grid-container n-3">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <code>
+                <pre>
+                    row-gap: 20px;
+                </pre>
+            </code>
+        </section>
+        <section>
+
+            <h3>column-gap</h3>
+            <div class="grid-container n-4">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <code>
+                <pre>
+                    column-gap: 20px;
+                </pre>
+            </code>
+        </section>
+        <section>
+
+            <h3>gap</h3>
+            <div class="grid-container n-5">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <code>
+                <pre>
+                    gap: 20px;
+                </pre>
+            </code>
+        </section>
+        <h2>Grid Lines</h2>
+        <section>
+
+            <img src="Images/grid_lines.png" alt="">
+            <p>Grid lines are a way to see the grid item start and end points which will come handy later on for
+                spanning
+                the items inside a grid container.</p>
+            <h3>Column span or grid column</h3>
+            <div class="grid-container n-5">
+                <div class="item1">item1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div class="item7">item7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <h4>This can be achieved by the css property:</h4>
+            <code>
+                <pre>
+                    .item1{
+                    grid-column: 1 / 3;
+                    }
+
+                    or
+
+                    .item1{
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                    }
+                </pre>
+            </code>
+
+            <h4>item 7 css:</h4>
+            <code>
+                <pre>
+                    .item7 {
+                    grid-column: 2 / 4;
+                    }
+                </pre>
+            </code>
+            <h3>Doing the same with span approach</h3>
+            <div class="grid-container n-5">
+                <div style="grid-column: 1 / span 2;">item1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div style="grid-column: 2 / span 2;">item7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <h4>This can be achieved by the css property:</h4>
+            <code>
+                <pre>
+                    .item1{
+                    grid-column: 1 / span 2;
+                    }
+                </pre>
+            </code>
+
+            <h4>item 7 css:</h4>
+            <code>
+                <pre>
+                    .item7 {
+                    grid-column: 2 / span 2;
+                    }
+                </pre>
+            </code>
+            <p><b>Note:</b> the span keyword is used to indicate how many columns it will span.</p>
+        </section>
+        <section>
+            <h3>Row span or grid row</h3>
+            <div class="grid-container n-5">
+                <div style="grid-row: 1/ span 3;">item1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <h4>This can be achieved by the css property:</h4>
+            <code>
+                <pre>
+                    .item1{
+                        grid-row: 1/ span 3;
+                    }
+                </pre>
+            </code>
+        </section>
+        <section>
+
+            <h3>justify-content property in grid</h3>
+            <p><b>Note:</b> the width of the grid has to be samller than the container in order for
+                <code>justify-content</code> to have an effect. That is why we have given <code>grid-template-columns:
+                    60px 60px 60px;</code>
+            </p>
+            <p>Use the justify-content property to align the grid inside the container.</p>
+            <div class="grid-container n-6">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>This was achieved by including this css property on the container/parent element:</p>
+            <code>
+                <pre>
+                    justify-content: space-evenly;
+                </pre>
+            </code>
+
+            <div class="grid-container n-6" style="justify-content: flex-start;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>css on container:</p>
+            <code>
+                <pre>
+                    justify-content: flex-start;
+                </pre>
+            </code>
+
+            <div class="grid-container n-6" style="justify-content: flex-end;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>css on container:</p>
+            <code>
+                <pre>
+                    justify-content: flex-end;
+                </pre>
+            </code>
+
+            <div class="grid-container n-6" style="justify-content: center;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>css on container:</p>
+            <code>
+                <pre>
+                    justify-content: center;
+                </pre>
+            </code>
+
+
+            <div class="grid-container n-6" style="justify-content: space-between;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>css on container:</p>
+            <code>
+                <pre>
+                    justify-content: space-between;
+                </pre>
+            </code>
+        </section>
+
+
+        <section>
+
+            <h3>align-content property in grid</h3>
+            <p><b>Note:</b> the height of the grid has to be samller than the container's height in order for
+                <code>align-content</code> to have an effect. That is why we have given <code>height:600px</code> to the
+                container.
+            </p>
+
+            <p>Use the align-content property to vertically align the grid inside the container. .</p>
+            <div class="grid-container n-7" style="align-content: center;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>This was achieved by including this css property on the container/parent element:</p>
+            <code>
+                <pre>
+                    align-content: center;
+                </pre>
+            </code>
+            <div class="grid-container n-7" style="align-content: space-between;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>css on container:</p>
+
+            <code>
+                <pre>
+                    align-content: space-between;
+                </pre>
+            </code>
+            <div class="grid-container n-7" style="align-content: space-around;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>css on container:</p>
+
+            <code>
+                <pre>
+                    align-content: space-around;
+                </pre>
+            </code>
+
+            <div class="grid-container n-7" style="align-content: space-evenly;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>css on container:</p>
+
+            <code>
+                <pre>
+                    align-content: space-evenly;
+                </pre>
+            </code>
+
+            <div class="grid-container n-7" style="align-content: start;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>css on container:</p>
+
+            <code>
+                <pre>
+                    align-content: start;
+                </pre>
+            </code>
+
+            <div class="grid-container n-7" style="align-content: end;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+
+            <p>css on container:</p>
+
+            <code>
+                <pre>
+                    align-content: end;
+                </pre>
+            </code>
+        </section>
+    </div>
+
+</body>
+
+
+</html>
